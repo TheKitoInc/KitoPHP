@@ -14,6 +14,11 @@
 
 namespace Kito\Cryptography;
 
+use Kito\Cryptography\Hash\HashAlgorithmCalcException;
+use Kito\Cryptography\Hash\HashAlgorithmNotFoundException;
+use Kito\Cryptography\Hash\InvalidHashValueException;
+
+
 /**
  * @author TheKito < blankitoracing@gmail.com >
  */
@@ -35,7 +40,7 @@ class Hash
         }
 
         if (!isset($_[$lowerName])) {
-            $_[$lowerName] = new HashFunction($lowerName);
+            $_[$lowerName] = new Hash($lowerName);
         }
 
         return $_[$lowerName];
