@@ -14,7 +14,6 @@
 
 namespace Kito\Cryptography;
 
-
 use Kito\Cryptography\HMAC\HMACAlgorithmCalcException;
 use Kito\Cryptography\HMAC\HMACAlgorithmNotFoundException;
 use Kito\Cryptography\HMAC\InvalidHMACValueException;
@@ -57,12 +56,12 @@ class HMAC
             throw new HMACAlgorithmNotFoundException($this->name);
         }
 
-        $this->example = $this->calc('','');
+        $this->example = $this->calc('', '');
     }
 
     public function calc(string $data, string $secret): string
     {
-        $t = hash_hmac($this->name, $data,$secret);
+        $t = hash_hmac($this->name, $data, $secret);
 
         if ($t === false) {
             throw new HMACAlgorithmCalcException($data);
@@ -71,9 +70,9 @@ class HMAC
         return strtoupper($t);
     }
 
-    public function check(string $hashValue, string $data,string $secret): bool
+    public function check(string $hashValue, string $data, string $secret): bool
     {
-        return $this->calc($data,$secret) == strtoupper($hashValue);
+        return $this->calc($data, $secret) == strtoupper($hashValue);
     }
 
     public function checkHMAC(string $value): bool
