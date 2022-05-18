@@ -108,14 +108,14 @@ abstract class Driver
     /**
      * List database tables.
      *
-     * @return Array<String> tables name
+     * @return array<string> tables name
      */
     abstract public function getTables();
 
     /**
      * List table cols.
      *
-     * @return Array<String,Array<String,String>> col name, {Attribute,Value}
+     * @return array<string,array<string,string>> col name, {Attribute,Value}
      */
     abstract public function getTableCols($table);
 
