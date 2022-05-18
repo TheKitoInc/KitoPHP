@@ -1,7 +1,7 @@
 <?php
 
 define('base', __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
-define('baseDir', base.'src');
+define('baseDir', base.'src\Kito');
 define('baseVendor', 'Kito');
 
 scan(baseDir.DIRECTORY_SEPARATOR);
