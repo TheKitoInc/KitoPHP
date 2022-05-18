@@ -12,7 +12,7 @@
  * GNU Lesser General Public License for more details.
  */
 
-namespace Kito\Cryptography;
+namespace Kito\Cryptography\Hash;
 
 /**
  * @author TheKito < blankitoracing@gmail.com >
