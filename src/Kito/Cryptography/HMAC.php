@@ -28,7 +28,7 @@ class HMAC
         return hash_hmac_algos();
     }
 
-    public static function getAlgorithm(string $name): Hash
+    public static function getAlgorithm(string $name): HMAC
     {
         $lowerName = strtolower($name);
 
