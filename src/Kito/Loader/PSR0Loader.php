@@ -19,7 +19,6 @@ namespace Kito\Loader;
 
 class PSR0Loader extends AbstractLoader
 {
-
     private $_libPath;
 
     /**
@@ -39,11 +38,11 @@ class PSR0Loader extends AbstractLoader
      */
     public function getFileName(string $className): string
     {
-        $classFile = $this->_libPath . parent::parsePath($className . '.php');
+        $classFile = $this->_libPath.parent::parsePath($className.'.php');
 
         return
-                pathinfo($classFile, PATHINFO_DIRNAME) .
-                DIRECTORY_SEPARATOR .
+                pathinfo($classFile, PATHINFO_DIRNAME).
+                DIRECTORY_SEPARATOR.
                 str_replace('_', DIRECTORY_SEPARATOR, pathinfo($classFile, PATHINFO_BASENAME));
     }
 
@@ -71,5 +70,4 @@ class PSR0Loader extends AbstractLoader
     {
         return $this->_libPath;
     }
-
 }

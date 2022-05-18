@@ -19,7 +19,6 @@ namespace Kito\Loader;
 
 abstract class AbstractLoader
 {
-
     /**
      * Normalize and clean path.
      *
@@ -36,12 +35,11 @@ abstract class AbstractLoader
         );
 
         $_newPath = '';
-        foreach (explode(DIRECTORY_SEPARATOR, $_path) as $_)
-        {
+        foreach (explode(DIRECTORY_SEPARATOR, $_path) as $_) {
             $_ = trim($_);
 
             if (!empty($_)) {
-                $_newPath .= DIRECTORY_SEPARATOR . $_;
+                $_newPath .= DIRECTORY_SEPARATOR.$_;
             }
         }
 
