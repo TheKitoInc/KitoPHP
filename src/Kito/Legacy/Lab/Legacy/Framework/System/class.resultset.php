@@ -60,7 +60,7 @@ interface IResultSet
     /**
      * get row in resultset as array with index colname.
      *
-     * @return Array<String,mixed>
+     * @return array<string,mixed>
      */
     public function get();
 
