@@ -19,7 +19,6 @@ namespace Kito\Loader;
 
 class KitoLoader extends AbstractLoader
 {
-
     const server = 'https://raw.githubusercontent.com/TheKito/KitoPHP/main/src/';
 
     private $cacheLoader;
@@ -36,7 +35,7 @@ class KitoLoader extends AbstractLoader
      */
     public static function getClassURL(string $className): string
     {
-        return self::server . str_replace('\\', '/', self::parsePath($className));
+        return self::server.str_replace('\\', '/', self::parsePath($className));
     }
 
     /**
@@ -67,5 +66,4 @@ class KitoLoader extends AbstractLoader
 
         $this->cacheLoader->loadClassHelper($className);
     }
-
 }
