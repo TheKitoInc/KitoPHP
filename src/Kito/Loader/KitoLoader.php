@@ -35,7 +35,7 @@ class KitoLoader extends AbstractLoader
      */
     public static function getClassURL(string $className): string
     {
-        return self::server.str_replace('\\', '/', self::parsePath($className));
+        return self::server.str_replace('\\', '/', self::parsePath($className) . '.php');
     }
 
     /**
