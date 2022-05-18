@@ -19,7 +19,7 @@ namespace Kito;
  */
 class Exception extends \Exception
 {
-    public function __construct(string $message = '', int  $code = 0, ?\Throwable  $previous = null)
+    public function __construct(string $message = '', int $code = 0, ?\Throwable $previous = null)
     {
         if ($code === 0) {
             $code = crc32(get_called_class());
