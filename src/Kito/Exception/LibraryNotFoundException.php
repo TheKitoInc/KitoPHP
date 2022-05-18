@@ -12,7 +12,7 @@
  * GNU Lesser General Public License for more details.
  */
 
-namespace Kito;
+namespace Kito\Exception;
 
 /**
  * @author TheKito < blankitoracing@gmail.com >
