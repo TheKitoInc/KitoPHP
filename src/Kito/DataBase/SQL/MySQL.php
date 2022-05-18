@@ -15,17 +15,17 @@
 
 namespace Kito\DataBase\SQL;
 
-use Kito\DataBase\SQL\Exception\QueryException;
 use Kito\DataBase\SQL\Exception\CommandException;
 use Kito\DataBase\SQL\Exception\ConnectException;
+use Kito\DataBase\SQL\Exception\CountException;
 use Kito\DataBase\SQL\Exception\DeleteException;
 use Kito\DataBase\SQL\Exception\InsertException;
+use Kito\DataBase\SQL\Exception\MaxException;
+use Kito\DataBase\SQL\Exception\MinException;
+use Kito\DataBase\SQL\Exception\QueryException;
 use Kito\DataBase\SQL\Exception\SelectException;
 use Kito\DataBase\SQL\Exception\UpdateException;
-use Kito\DataBase\SQL\Exception\MinException;
-use Kito\DataBase\SQL\Exception\MaxException;
-use Kito\DataBase\SQL\Exception\CountException;
-use \mysqli;
+use mysqli;
 
 /**
  * @author TheKito < blankitoracing@gmail.com >
