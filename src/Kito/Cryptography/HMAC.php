@@ -39,7 +39,7 @@ class HMAC
         }
 
         if (!isset($_[$lowerName])) {
-            $_[$lowerName] = new Hash($lowerName);
+            $_[$lowerName] = new HMAC($lowerName);
         }
 
         return $_[$lowerName];
