@@ -13,7 +13,7 @@
  *
  */
 
-namespace Kito;
+namespace Kito\Http\Server;
 
 /**
  * @author TheKito < blankitoracing@gmail.com >
