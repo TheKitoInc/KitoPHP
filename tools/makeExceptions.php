@@ -34,7 +34,7 @@ function checkEx($path)
 
     $ns = dirname(str_replace('/', '\\', baseVendor.substr(substr($path, 0, -4), strlen(baseDir))));
 
-    file_put_contents($path, getCode($ns)); 
+    file_put_contents($path, getCode($ns));
 }
 
 function getCode($ns)
