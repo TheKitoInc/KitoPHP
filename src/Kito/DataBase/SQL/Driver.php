@@ -39,9 +39,9 @@ abstract class Driver
 
     abstract public function count(string $table, array $where = []);
 
-    abstract public function max(string $table, array $column, array $where = []);
+    abstract public function max(string $table, string $column, array $where = []): float;
 
-    abstract public function min(string $table, array $column, array $where = []);
+    abstract public function min(string $table, string $column, array $where = []): float;
 
     abstract public function getTables(): array;
 
