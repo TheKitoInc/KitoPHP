@@ -8,9 +8,6 @@
 
 namespace Kito;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\RequestInterface;
-
 /**
  * Description of App.
  *
@@ -18,7 +15,6 @@ use Psr\Http\Message\RequestInterface;
  */
 class App
 {
-
     private $psr17Factory;
     private $request;
     private $response;
@@ -45,7 +41,7 @@ class App
         $this->psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
 
         $creator = new \Nyholm\Psr7Server\ServerRequestCreator(
-                $this->psr17Factory, // ServerRequestFactory
+            $this->psr17Factory, // ServerRequestFactory
                 $this->psr17Factory, // UriFactory
                 $this->psr17Factory, // UploadedFileFactory
                 $this->psr17Factory  // StreamFactory
@@ -57,14 +53,12 @@ class App
 
     public function __destruct()
     {
-        //clear all buffers;        
-        while (ob_get_level() > 0)
-        {
+        //clear all buffers;
+        while (ob_get_level() > 0) {
             ob_end_clean();
         }
 
         (new \Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($this->response);
         exit();
     }
-
 }
