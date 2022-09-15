@@ -19,7 +19,6 @@ namespace Kito;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-
 class App
 {
     private $request;
