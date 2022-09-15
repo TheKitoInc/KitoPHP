@@ -4,6 +4,7 @@ namespace Kito\Services;
 
 class MicroRouter
 {
+
     public function __construct()
     {
         ob_start();
@@ -17,14 +18,16 @@ class MicroRouter
         $PATH = self::parsePath($SITE_ROOT . DIRECTORY_SEPARATOR . $REQUEST_PATH);
         //error_log($PATH);
 
-        while (strlen($PATH) > strlen($_SERVER['DOCUMENT_ROOT']) + 1) {
-            $routerPath = $PATH.'/index.php';
 
-            if (file_exists($routerPath)) {
+        while (strlen($PATH) > strlen($_SERVER['DOCUMENT_ROOT']) + 1)
+        {
+            $routerPath = $PATH . '/index.php';
+
+            if (file_exists($routerPath))
+            {
                 ob_clean();
-                require_once $routerPath;
-
-                return;
+                require_once($routerPath);
+                break;
             }
 
             $PATH = dirname($PATH);
@@ -39,17 +42,17 @@ class MicroRouter
 
     private static function parsePath(string $path): string
     {
-        $elements = [];
-        foreach (explode(DIRECTORY_SEPARATOR, str_replace('\\', DIRECTORY_SEPARATOR, str_replace('/', DIRECTORY_SEPARATOR, $path))) as $element) {
-            if (empty($element)) {
+        $elements = array();
+        foreach (explode(DIRECTORY_SEPARATOR, str_replace("\\", DIRECTORY_SEPARATOR, str_replace('/', DIRECTORY_SEPARATOR, $path))) as $element)
+        {
+            if (empty($element))
                 continue;
-            } elseif ($element == '.') {
+            else if ($element == '.')
                 continue;
-            } elseif ($element == '..') {
+            else if ($element == '..')
                 array_pop($elements);
-            } else {
+            else
                 $elements[] = $element;
-            }
         }
 
         return implode(DIRECTORY_SEPARATOR, $elements);
