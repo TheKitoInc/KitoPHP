@@ -54,4 +54,5 @@ class MicroRouter
 
         return implode(DIRECTORY_SEPARATOR, $elements);
     }
+
 }
