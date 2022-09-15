@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * BLKLoader.
+ * KitoLoader.
  *
  * php version 7.2.
  *
@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @author  The Kito <thekito@blktech.com>
  * @license http://opensource.org/licenses/gpl-license.php GNU GPL
  *
- * @link https://github.com/TheKito/Loader
+ * @link https://github.com/TheKito/KitoPHP
  */
 
 namespace Kito\Loader;
