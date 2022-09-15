@@ -14,7 +14,7 @@ class MicroRouter
         $REQUEST_PATH = self::parsePath(self::removeArgs(filter_input(INPUT_SERVER, 'REQUEST_URI')));
         //error_log($REQUEST_PATH);
 
-        $PATH = self::parsePath($SITE_ROOT.DIRECTORY_SEPARATOR.$REQUEST_PATH);
+        $PATH = self::parsePath($SITE_ROOT . DIRECTORY_SEPARATOR . $REQUEST_PATH);
         //error_log($PATH);
 
         while (strlen($PATH) > strlen($_SERVER['DOCUMENT_ROOT']) + 1) {
@@ -34,7 +34,6 @@ class MicroRouter
     private static function removeArgs(string $path): string
     {
         $elements = explode('?', $path, 2);
-
         return $elements[0];
     }
 
