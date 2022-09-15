@@ -50,6 +50,7 @@ class KitoLoader extends AbstractLoader
         }
 
         $data = file_get_contents(self::getClassURL($className));
+        $data = @file_get_contents(self::getClassURL($className));
 
         if ($data == false) {
             return;
