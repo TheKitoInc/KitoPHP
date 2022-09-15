@@ -9,23 +9,21 @@
 namespace Kito;
 
 use Psr\Http\Message\ResponseInterface;
+
 /**
- * Description of App
+ * Description of App.
  *
  * @author Instalacion
  */
 class App
 {
-
     public function emit(ResponseInterface $response)
     {
-        while (ob_clean())
-        {
+        while (ob_clean()) {
             //clear all buffers;
-        }; 
+        }
 
-        (new Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($response);        
+        (new Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($response);
         exit();
     }
-
 }
