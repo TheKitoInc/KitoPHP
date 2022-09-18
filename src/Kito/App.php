@@ -64,12 +64,7 @@ class App
 
     public function __destruct()
     {
-        //clear all buffers;
-        while (ob_get_level() > 0) {
-            ob_end_clean();
-        }
-
-        (new \Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($this->response);
+        $this->responseEmitter->emit($this->response);
         exit();
     }
 }
