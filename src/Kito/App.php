@@ -23,7 +23,8 @@ class App
 {
     private $request;
     private $response;
-
+    private $responseEmitter;
+    
     public function getRequest(): RequestInterface
     {
         return $this->request;
