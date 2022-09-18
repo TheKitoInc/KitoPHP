@@ -4,12 +4,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 namespace Kito\Session;
 
 use Kito\Cryptography\AES256;
 
 /**
- * Description of EncryptedSessionHandler
+ * Description of EncryptedSessionHandler.
  *
  * @author Instalacion
  */
@@ -27,7 +28,7 @@ class EncryptedSessionHandler extends \SessionHandler
         $data = parent::read($id);
 
         if (!$data) {
-            return "";
+            return '';
         } else {
             return $this->crypto->decrypt($data);
         }

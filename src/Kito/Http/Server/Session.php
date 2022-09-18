@@ -2,11 +2,10 @@
 
 namespace Kito\Http\Server;
 
-use \Kito\DataBase\KeyValue\KeyValueInterface;
+use Kito\DataBase\KeyValue\KeyValueInterface;
 
 class Session
 {
-
     private $sessionIdController;
     private $sessionStorageController;
 
@@ -15,5 +14,4 @@ class Session
         $this->sessionIdController = $sessionIdController;
         $this->sessionStorageController = $sessionStorageController;
     }
-
 }
