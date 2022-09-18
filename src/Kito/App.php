@@ -46,7 +46,7 @@ class App
 
     public function __construct()
     {
-        ob_start();
+        $this->responseEmitter = new Http\Server\Response\SapiEmitter();
 
         $psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
 
