@@ -20,7 +20,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class SapiEmitter extends \Laminas\HttpHandlerRunner\Emitter\SapiEmitter
 {
-
     public function __construct()
     {
         //create buffer for catch all before main response
@@ -36,12 +35,10 @@ class SapiEmitter extends \Laminas\HttpHandlerRunner\Emitter\SapiEmitter
     public function emit(ResponseInterface $response): bool
     {
         //clear all buffers;
-        while (ob_get_level() > 0)
-        {
+        while (ob_get_level() > 0) {
             ob_end_clean();
         }
 
         return parent::emit($response);
     }
-
 }
