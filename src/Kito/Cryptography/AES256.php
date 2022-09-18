@@ -4,26 +4,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 namespace Kito\Cryptography;
 
 /**
- * Description of AES256
+ * Description of AES256.
  *
  * @author Instalacion
  */
 class AES256
 {
     private $password;
-    
+
     public function __construct($password)
     {
         $this->password = $password;
     }
 
     /**
-     * decrypt AES 256
+     * decrypt AES 256.
      *
      * @param data $edata
+     *
      * @return decrypted data
      */
     public function decrypt($edata)
@@ -33,12 +35,12 @@ class AES256
         $ct = substr($data, 16);
 
         $rounds = 3; // depends on key length
-        $data00 = $this->password . $salt;
-        $hash = array();
+        $data00 = $this->password.$salt;
+        $hash = [];
         $hash[0] = hash('sha256', $data00, true);
         $result = $hash[0];
         for ($i = 1; $i < $rounds; $i++) {
-            $hash[$i] = hash('sha256', $hash[$i - 1] . $data00, true);
+            $hash[$i] = hash('sha256', $hash[$i - 1].$data00, true);
             $result .= $hash[$i];
         }
         $key = substr($result, 0, 32);
@@ -48,9 +50,10 @@ class AES256
     }
 
     /**
-     * crypt AES 256
+     * crypt AES 256.
      *
      * @param data $data
+     *
      * @return base64 encrypted data
      */
     public function encrypt($data)
@@ -62,7 +65,7 @@ class AES256
         $dx = '';
         // Salt the key(32) and iv(16) = 48
         while (strlen($salted) < 48) {
-            $dx = hash('sha256', $dx . $this->password . $salt, true);
+            $dx = hash('sha256', $dx.$this->password.$salt, true);
             $salted .= $dx;
         }
 
@@ -70,6 +73,7 @@ class AES256
         $iv = substr($salted, 32, 16);
 
         $encrypted_data = openssl_encrypt($data, 'AES-256-CBC', $key, true, $iv);
-        return base64_encode($salt . $encrypted_data);
+
+        return base64_encode($salt.$encrypted_data);
     }
 }
