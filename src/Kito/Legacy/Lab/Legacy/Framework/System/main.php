@@ -138,4 +138,4 @@ function autoLoadClasses($path)
         closedir($handle);
     }
 }
-    init();
+init();

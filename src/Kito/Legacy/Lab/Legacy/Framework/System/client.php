@@ -198,17 +198,17 @@ function proxyImage($module, $image)
         $ext = substr($image, -3);
         // set the MIME type
         switch ($ext) {
-        case 'jpg':
-            $mime = 'image/jpeg';
-            break;
-        case 'gif':
-            $mime = 'image/gif';
-            break;
-        case 'png':
-            $mime = 'image/png';
-            break;
-        default:
-            $mime = false;
+            case 'jpg':
+                $mime = 'image/jpeg';
+                break;
+            case 'gif':
+                $mime = 'image/gif';
+                break;
+            case 'png':
+                $mime = 'image/png';
+                break;
+            default:
+                $mime = false;
         }
 
         // if a valid MIME type exists, display the image

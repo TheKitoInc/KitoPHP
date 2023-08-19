@@ -53,9 +53,9 @@ class App
 
         $creator = new \Nyholm\Psr7Server\ServerRequestCreator(
             $psr17Factory, // ServerRequestFactory
-                $psr17Factory, // UriFactory
-                $psr17Factory, // UploadedFileFactory
-                $psr17Factory  // StreamFactory
+            $psr17Factory, // UriFactory
+            $psr17Factory, // UploadedFileFactory
+            $psr17Factory  // StreamFactory
         );
 
         $this->setRequest($creator->fromGlobals());

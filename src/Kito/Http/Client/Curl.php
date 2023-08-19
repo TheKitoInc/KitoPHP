@@ -88,8 +88,8 @@ class Curl
         $this->setHeaders($headers);
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, $payload);
 
-//        if (curl_getinfo($this->curl, CURLINFO_HTTP_CODE) > 399)
-//            throw new Exception('HTTP ' . curl_getinfo($this->curl, CURLINFO_HTTP_CODE));
+        //        if (curl_getinfo($this->curl, CURLINFO_HTTP_CODE) > 399)
+        //            throw new Exception('HTTP ' . curl_getinfo($this->curl, CURLINFO_HTTP_CODE));
 
         return curl_exec($this->curl);
     }

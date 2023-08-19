@@ -19,7 +19,7 @@ namespace Kito\Loader;
 
 class KitoLoader extends AbstractLoader
 {
-    const server = 'https://raw.githubusercontent.com/TheKito/KitoPHP/main/src/';
+    public const server = 'https://raw.githubusercontent.com/TheKito/KitoPHP/main/src/';
 
     private $cacheLoader;
 
