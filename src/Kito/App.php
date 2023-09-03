@@ -65,6 +65,6 @@ class App
     public function __destruct()
     {
         $this->responseEmitter->emit($this->response);
-        exit();
+        exit;
     }
 }
