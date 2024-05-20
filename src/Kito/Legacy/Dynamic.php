@@ -36,21 +36,21 @@ class Dynamic
     {
         $id_ = Integer::unSignedInt64UnCombineIntoInt32($id);
 
-        $this->driver->delete($this->tablePrefix.$id_[0], ['id'=>$id_[1]]);
+        $this->driver->delete($this->tablePrefix.$id_[0], ['id' => $id_[1]]);
     }
 
     public function exists(int $id): bool
     {
         $id_ = Integer::unSignedInt64UnCombineIntoInt32($id);
 
-        return $this->driver->exists($this->tablePrefix.$id_[0], ['id'=>$id_[1]]);
+        return $this->driver->exists($this->tablePrefix.$id_[0], ['id' => $id_[1]]);
     }
 
     public function get(int $id): array
     {
         $id_ = Integer::unSignedInt64UnCombineIntoInt32($id);
 
-        return $this->driver->getRow($this->tablePrefix.$id_[0], [], ['id'=>$id_[1]]);
+        return $this->driver->getRow($this->tablePrefix.$id_[0], [], ['id' => $id_[1]]);
     }
 
     public function set(string $idHigh, array $data = []): int
