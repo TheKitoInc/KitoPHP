@@ -116,6 +116,7 @@ function strEndsWith($FullStr, $EndStr)
     $StrLen = strlen($EndStr);
     // Look at the end of FullStr for the substring the size of EndStr
     $FullStrEnd = substr($FullStr, strlen($FullStr) - $StrLen);
+
     // If it matches, it does end with EndStr
     return $FullStrEnd == $EndStr;
 }

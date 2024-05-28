@@ -1,7 +1,6 @@
 <?php
 
 /**
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
@@ -11,11 +10,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
  */
 
 /**
- *
  * @author The TheKito < blankitoracing@gmail.com >
  */
 class BLKTouchTable
@@ -45,12 +42,12 @@ class BLKTouchTable
 
     public function touch($data)
     {
-        $this->SQLConnection->autoUpdate($this->table, array('gc' => $this->getGCTime()), $data);
+        $this->SQLConnection->autoUpdate($this->table, ['gc' => $this->getGCTime()], $data);
         $data['created'] = null;
-        $this->SQLConnection->update($this->table, array('created' => time()), $data);
+        $this->SQLConnection->update($this->table, ['created' => time()], $data);
     }
 
-    public function purge($filter = array())
+    public function purge($filter = [])
     {
         $filter['!gc'] = $this->getGCTime();
         $this->SQLConnection->delete($this->table, $filter);

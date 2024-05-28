@@ -47,15 +47,15 @@ class Logger extends Module
             $LastTTL = timeGetTime();
         }
 
-        if ((number_format((timeGetTime()) - $LastTTL, 5)) > 0.09) {
+        if (number_format(timeGetTime() - $LastTTL, 5) > 0.09) {
             if ($handle2) {
-                if (!fwrite($handle2, 'Logger('.(number_format((timeGetTime()) - $LastTTL, 5)).'): '.$type.': '.$Value."\n")) {
+                if (!fwrite($handle2, 'Logger('.number_format(timeGetTime() - $LastTTL, 5).'): '.$type.': '.$Value."\n")) {
                     exit("couldn't write to file.");
                 }
             }
         } else {
             if ($handle) {
-                if (!fwrite($handle, 'Logger('.(number_format((timeGetTime()) - $LastTTL, 5)).'): '.$type.': '.$Value."\n")) {
+                if (!fwrite($handle, 'Logger('.number_format(timeGetTime() - $LastTTL, 5).'): '.$type.': '.$Value."\n")) {
                     exit("couldn't write to file.");
                 }
             }
